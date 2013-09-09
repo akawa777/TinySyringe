@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinySyringe", "TinySyringe\TinySyringe.csproj", "{1ED33EDC-BD77-43E3-AAFE-E7037E5DF243}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinySyringe.Tests", "TinySyringe.Tests\TinySyringe.Tests.csproj", "{5B62A0A8-6292-410D-BC03-1011E4564197}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1ED33EDC-BD77-43E3-AAFE-E7037E5DF243} = {1ED33EDC-BD77-43E3-AAFE-E7037E5DF243}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{1ED33EDC-BD77-43E3-AAFE-E7037E5DF243}.Debug.ActiveCfg = Debug|.NET
+		{1ED33EDC-BD77-43E3-AAFE-E7037E5DF243}.Debug.Build.0 = Debug|.NET
+		{1ED33EDC-BD77-43E3-AAFE-E7037E5DF243}.Release.ActiveCfg = Release|.NET
+		{1ED33EDC-BD77-43E3-AAFE-E7037E5DF243}.Release.Build.0 = Release|.NET
+		{5B62A0A8-6292-410D-BC03-1011E4564197}.Debug.ActiveCfg = Debug|.NET
+		{5B62A0A8-6292-410D-BC03-1011E4564197}.Debug.Build.0 = Debug|.NET
+		{5B62A0A8-6292-410D-BC03-1011E4564197}.Release.ActiveCfg = Release|.NET
+		{5B62A0A8-6292-410D-BC03-1011E4564197}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
