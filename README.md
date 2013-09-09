@@ -4,7 +4,6 @@ TinySyringe
 Dependency Injection Library for .NET 1.1 and .NET 2.0
 
 ## Getting started
-### Basic
 ```cs
 public interface IRobot
 {
