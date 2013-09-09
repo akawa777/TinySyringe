@@ -9,7 +9,7 @@ TinySyringe helps use the technique of dependency injection.
 
 [Getting started](https://github.com/akawa777/TinySyringe/wiki)
 
-### A Quick Exsample
+### A Quick Example
 ```cs
 public interface IRobot
 {
