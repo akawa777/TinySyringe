@@ -1,7 +1,7 @@
 TinySyringe
 ===========
 
-Dependency Injection Library
+Dependency Injection Library For .NET 1.1 and .NET 2.0
 
 ## Getting started
 ```cs
