@@ -4,6 +4,7 @@ TinySyringe
 Dependency Injection Library for .NET 1.1 and .NET 2.0
 
 ## Getting started
+### Basic
 ```cs
 public interface IRobot
 {
@@ -48,3 +49,4 @@ IRobot robot = container.Get(typeof(IRobot)) as IRobot;
 
 string result = robot.Move("jump"); // result is "jumped"
 ```
+[more..](wiki)
