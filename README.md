@@ -48,4 +48,4 @@ IRobot robot = container.Get(typeof(IRobot)) as IRobot;
 
 string result = robot.Move("jump"); // result is "jumped"
 ```
-[more..](wiki)
+[more..](https://github.com/akawa777/TinySyringe/wiki)
