@@ -50,3 +50,5 @@ IRobot robot = container.Get(typeof(IRobot)) as IRobot;
 
 string result = robot.Move("jump"); // result is "jumped"
 ```
+### License
+The MIT License (MIT)
