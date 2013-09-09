@@ -1,11 +1,11 @@
 TinySyringe
 ===========
 
-Inversion of Control library for .NET 1.1 and .NET 2.0
+Inversion of Control library (IoC) for .NET 1.1 and .NET 2.0
 
 ### Overview
 
-TinySyringe helps use the technique of dependency injection.
+TinySyringe helps use the technique of Dependency Injection (DI).
 
 [Getting started](https://github.com/akawa777/TinySyringe/wiki)
 
