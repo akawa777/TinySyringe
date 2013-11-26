@@ -42,46 +42,53 @@ namespace TinySyringe.Common
 
 		public IRegister To(Type serviceType)
 		{
-            injectionHash[implementType] = GetInjectionInfo(implementType, serviceType);
+            //injectionHash[implementType] = GetInjectionInfo(implementType, serviceType);
+            injectionHash[implementType.FullName] = GetInjectionInfo(implementType, serviceType);
 			
 			return this;
 		}
 
         public IRegister Callin(CreationFunc creationFunc)
 		{
-            if (!injectionHash.ContainsKey(implementType)) return this;
-            (injectionHash[implementType] as InjectionInfo).CreationFunc = creationFunc;
+            //if (!injectionHash.ContainsKey(implementType)) return this;
+            //(injectionHash[implementType] as InjectionInfo).CreationFunc = creationFunc;            
+
+            injectionHash[implementType.FullName] = GetInjectionInfo(implementType, creationFunc.Method.ReturnType);
+            (injectionHash[implementType.FullName] as InjectionInfo).CreationFunc = creationFunc;
 
             return this;
 		}
 
 		public IRegister Remove()
 		{
-            if (!injectionHash.ContainsKey(implementType)) return this;
-            injectionHash.Remove(implementType);
+            //if (!injectionHash.ContainsKey(implementType)) return this;
+            //injectionHash.Remove(implementType);
+
+            if (!injectionHash.ContainsKey(implementType.FullName)) return this;
+            injectionHash.Remove(implementType.FullName);
 
 			return this;
 		}
 
 		public IRegister Singleton()
 		{
-            if (!injectionHash.ContainsKey(implementType)) return this;
-            (injectionHash[implementType] as InjectionInfo).IsSingleton = true;
+            if (!injectionHash.ContainsKey(implementType.FullName)) return this;
+            (injectionHash[implementType.FullName] as InjectionInfo).IsSingleton = true;
 
 			return this;
 		}
 		public IRegister PropertiesAutowired()
 		{
-            if (!injectionHash.ContainsKey(implementType)) return this;
-            (injectionHash[implementType] as InjectionInfo).IsPropertiesAutowired = true;
+            if (!injectionHash.ContainsKey(implementType.FullName)) return this;
+            (injectionHash[implementType.FullName] as InjectionInfo).IsPropertiesAutowired = true;
 
 			return this;
 		}
 
 		public IRegister UsingConstructor(params Type[] argTypes)
 		{
-            if (!injectionHash.ContainsKey(implementType)) return this;
-            InjectionInfo injectionInfo = injectionHash[implementType] as InjectionInfo;
+            if (!injectionHash.ContainsKey(implementType.FullName)) return this;
+            InjectionInfo injectionInfo = injectionHash[implementType.FullName] as InjectionInfo;
             ConstructorInfo constInfo = injectionInfo.ServiceType.GetConstructor(argTypes);
 
             if (constInfo != null) injectionInfo.ServiceConstructor = constInfo;
@@ -91,8 +98,8 @@ namespace TinySyringe.Common
 
         public IRegister Callback(PostFunc postFunc)
         {
-            if (!injectionHash.ContainsKey(implementType)) return this;
-            InjectionInfo injectionInfo = injectionHash[implementType] as InjectionInfo;
+            if (!injectionHash.ContainsKey(implementType.FullName)) return this;
+            InjectionInfo injectionInfo = injectionHash[implementType.FullName] as InjectionInfo;
             injectionInfo.PostFunc = postFunc;
 
             return this;

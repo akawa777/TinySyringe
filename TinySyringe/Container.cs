@@ -11,7 +11,8 @@ namespace TinySyringe
 		object Get(Type type);
 		object Get(Type type, ParameterList parameterList);
 		IRegister Set(Type implementType);
-		void LoadModules(params IModule[] modules);		
+		void LoadModules(params IModule[] modules);
+        TypeList GetTypeList();
     }
 
 	public class Container : IContainer
@@ -29,18 +30,18 @@ namespace TinySyringe
 		}
 
 		private bool Has(Type type)
-		{			
-			return injectionHash.ContainsKey(type);
+		{
+            return injectionHash.ContainsKey(type.FullName);
 		}
 
 		public object Get(Type type, ParameterList parameterList)
-		{   
-			if (!injectionHash.ContainsKey(type))
+		{
+            if (!injectionHash.ContainsKey(type.FullName))
 			{
 				return null;
 			}
 
-			InjectionInfo injectionInfo = injectionHash[type] as InjectionInfo;
+            InjectionInfo injectionInfo = injectionHash[type.FullName] as InjectionInfo;
 			Type serviceType = injectionInfo.ServiceType;
 
 			if (injectionInfo.Instance != null)
@@ -178,5 +179,17 @@ namespace TinySyringe
                 module.Load(this);
 			}
 		}
-	}
+
+        public TypeList GetTypeList()
+        {
+            Hashtable typeHash = new Hashtable();
+
+            foreach (InjectionInfo injectionInfo in injectionHash.Values)
+            {
+                typeHash[injectionInfo.ImplementType] = injectionInfo.ServiceType;
+            }
+
+            return new TypeList(typeHash);
+        }
+    }
 }

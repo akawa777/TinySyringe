@@ -1,7 +1,7 @@
-![icon](https://github.com/akawa777/TinySyringe/blob/master/TinySyringe/injection.gif?raw=true)TinySyringe
+![icon](https://github.com/akawa777/TinySyringe/blob/master/TinySyringe/syringe.png?raw=true)TinySyringe
 ===========
 
-Inversion of Control library (IoC) for .NET 1.1 and .NET 2.0
+Inversion of Control (IoC) library for .NET 1.1 and .NET 2.0
 
 ### Overview
 

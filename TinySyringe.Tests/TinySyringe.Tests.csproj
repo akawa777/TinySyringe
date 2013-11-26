@@ -80,11 +80,6 @@
                     HintPath = "..\..\..\..\..\Windows\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
                 />
                 <Reference
-                    Name = "TinySyringe"
-                    AssemblyName = "TinySyringe"
-                    HintPath = "..\TinySyringe\bin\Debug\TinySyringe.dll"
-                />
-                <Reference
                     Name = "nunit.framework"
                     AssemblyName = "nunit.framework"
                     HintPath = "..\package\NUnit-2.6.2-net-1_1\bin\nunit.framework.dll"
@@ -93,6 +88,11 @@
                     Name = "System.Web"
                     AssemblyName = "System.Web"
                     HintPath = "..\..\..\..\..\Windows\Microsoft.NET\Framework\v1.1.4322\System.Web.dll"
+                />
+                <Reference
+                    Name = "TinySyringe"
+                    AssemblyName = "TinySyringe"
+                    HintPath = "..\DLL\net1_1\TinySyringe.dll"
                 />
             </References>
         </Build>

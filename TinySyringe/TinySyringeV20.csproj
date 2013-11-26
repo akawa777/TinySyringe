@@ -95,6 +95,7 @@
     <Compile Include="Module.cs" />
     <Compile Include="Parameter.cs" />
     <Compile Include="Register.cs" />
+    <Compile Include="TypeList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
