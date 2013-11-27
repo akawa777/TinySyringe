@@ -29,12 +29,22 @@ namespace TinySyringe
 
         public Type[] GetImplementTypes()
         {
-            return typeHash.Keys as Type[];
+            ArrayList keyList = new ArrayList();
+            foreach (Type key in typeHash.Keys)
+            {
+                keyList.Add(key);
+            }
+            return keyList.ToArray(typeof(Type)) as Type[];
         }
 
         public Type[] GetServiceTypes()
         {
-            return typeHash.Values as Type[];
+            ArrayList valueList = new ArrayList();
+            foreach (Type value in typeHash.Values)
+            {
+                valueList.Add(value);
+            }
+            return valueList.ToArray(typeof(Type)) as Type[];
         }
     }   
 }
